@@ -1,0 +1,13 @@
+{
+  "epochs": 500,
+  "lr": 0.01,
+  "contrast_dim": 16,
+  "temperature": 0.07,
+  "lambda_cca": 20.0,
+  "lambda_con": 0.009,
+  "lambda_snp": 0.03,
+  "lambda_img": 0.02,
+  "lambda_reg": 1e-12,
+  "lambda_gwas": 1.0,
+  "gwas_scale": 1.0
+}
