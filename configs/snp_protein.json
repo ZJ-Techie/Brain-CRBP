@@ -1,0 +1,44 @@
+{
+  "name": "snp_protein",
+  "modality": "protein",
+  "protocol": "holdout",
+  "test_size": 0.2,
+  "seeds": [
+    20260907,
+    20260908,
+    20260909
+  ],
+  "top_k": 10,
+  "upstream": "all",
+  "standardize": {
+    "snp": true,
+    "img": true,
+    "scope": "all"
+  },
+  "association": false,
+  "priors": {
+    "snp": "data/priors/snp_weights_eta1.csv",
+    "snp_column": "snp_id",
+    "img": "data/priors/protein_weights_eta1.csv",
+    "img_column": "protein_id"
+  },
+  "training": {
+    "epochs": 1000,
+    "lr": 0.01,
+    "contrast_dim": 8,
+    "temperature": 0.07,
+    "lambda_cca": 220.0,
+    "lambda_con": 0.009,
+    "lambda_snp": 0.08,
+    "lambda_img": 0.02,
+    "lambda_reg": 1e-12
+  },
+  "downstream": {
+    "tune": false,
+    "use_frozen": true,
+    "inner_folds": 5
+  },
+  "tasks": [
+    "classification"
+  ]
+}
