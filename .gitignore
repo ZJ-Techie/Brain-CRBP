@@ -1,0 +1,24 @@
+# Data and released weights are distributed in the accompanying archive only.
+data/
+weights/
+runs/
+*.pt
+*.mat
+*.xlsx
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

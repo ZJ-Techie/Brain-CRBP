@@ -1,0 +1,45 @@
+{
+  "name": "snp_fs",
+  "modality": "fs",
+  "protocol": "holdout",
+  "test_size": 0.2,
+  "seeds": [
+    20260907,
+    20260908,
+    20260909
+  ],
+  "top_k": 10,
+  "upstream": "train_split",
+  "standardize": {
+    "snp": false,
+    "img": true,
+    "scope": "train"
+  },
+  "association": true,
+  "priors": {
+    "snp": "data/priors/snp_weights_eta1.csv",
+    "snp_column": "snp_id",
+    "img": "data/priors/fs_weights_eta1.csv",
+    "img_column": "fs_id"
+  },
+  "training": {
+    "epochs": 500,
+    "lr": 0.01,
+    "contrast_dim": 16,
+    "temperature": 0.075,
+    "lambda_cca": 20.0,
+    "lambda_con": 0.009,
+    "lambda_snp": 0.03,
+    "lambda_img": 0.02,
+    "lambda_reg": 1e-12
+  },
+  "downstream": {
+    "tune": true,
+    "inner_folds": 5
+  },
+  "tasks": [
+    "classification",
+    "regression",
+    "association"
+  ]
+}
